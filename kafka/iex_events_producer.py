@@ -3,9 +3,11 @@ import requests
 from kafka import KafkaProducer
 
 IEX_API_TOKEN = config('IEX_API_TOKEN')
+KAFKA_TOPIC = config('KAFKA_TOPIC4')
+KAFKA_SERVER = config('KAFKA_SERVER')
 
-topic = 'iex-events-test'
-broker = 'localhost:9092'
+topic = KAFKA_TOPIC
+broker = KAFKA_SERVER
 producer = KafkaProducer(bootstrap_servers = broker)
 print('Start sending messages')
 

@@ -2,8 +2,11 @@ import time
 import requests
 from kafka import KafkaProducer
 
-topic = 'node-transactions-test2'
-broker = '10.0.0.14:9092'
+KAFKA_TOPIC = config('KAFKA_TOPIC2')
+KAFKA_SERVER = config('KAFKA_SERVER')
+
+topic = KAFKA_TOPIC
+broker = KAFKA_SERVER
 producer = KafkaProducer(bootstrap_servers = broker)
 print('Start sending messages')
 
