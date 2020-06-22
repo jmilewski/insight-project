@@ -22,7 +22,7 @@ def get_wind_data(start, end):
     #return df
     #start = 1592528600738
     #end = 1592529478045
-    con = psycopg2.connect("host=34.232.62.35 dbname=postgres user=db_select password=<setpassword>")
+    con = psycopg2.connect(" dbname=postgres user= password=")
     statement = f"SELECT pmr FROM price_metcalfe_ratio WHERE timestamp > '{start}' AND timestamp <= '{end}';"
     df = pd.read_sql_query(statement, con)
     return df
