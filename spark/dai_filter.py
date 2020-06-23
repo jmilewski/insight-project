@@ -27,3 +27,13 @@ df = spark.read \
 def dai_sum_by_block():
     df_dai = df.filter(df["token_address"]=="0x6b175474e89094c44da98b954eedeac495271d0f")
     df_dai_by_block = df_dai.select("block_number","value").groupBy("block_number").sum("value")
+    return df_dai_by_block
+
+def dai_sum_db_write():
+    df_dai_by_block.spark.write \
+    .format("jdbc") \
+    .option("url", f"jdbc:postgresql://{PG_SERVER}/{PG_DBNAME}") \
+    .option("dbtable", "dai_tracker") \
+    .option("user", PG_USER) \
+    .option("password", PG_PASSWORD) \
+    .option("driver", "org.postgresql.Driver")
