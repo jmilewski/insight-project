@@ -45,7 +45,9 @@ Extraction is exectued by running the following commands on the Ethereum Node EC
 
 ### Producers
 
-Four producers are used for each stream of data and executed by running `blocks_producer.py`, `transactions_producer.py`, `token_transfers_producer.py`, and `iex_events_producer.py` on the Ethereum Node EC2. Each producer reads from the Ethereum Node EC2 and loads JSON data into its own topic.
+Gemini Exchange data is retrieved from the IEX Cloud API and is pushed to a Kafka topic by running `iex_events_producer.py`.
+
+Three producers stream the extracted blockchain data by running `blocks_producer.py`, `transactions_producer.py`, and `token_transfers_producer.py`on the Ethereum Node EC2. Each producer reads from the Ethereum Node EC2 and loads JSON data into its own topic.
 
 ### Consumers
 
