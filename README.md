@@ -55,10 +55,16 @@ Consumers pull from each Kafka topic and insert data into a Postgres database. K
 
 ### Metric
 
-The Price-to-Metcalfe Ratio is computed by running `compute_pmr.py`. Results are loaded into the Postgres database. 
+The Price-to-Metcalfe Ratio is computed by running `compute_pmr.py`. Results are loaded into the Postgres database.
 
 ## Frontend
 
 The frontend is a Dash app that continuously pulls data from the Postgres database.
 
 ![Preview](images/frontend.png)
+
+### Historical analytics
+
+To allow for further exploration into blockchain data, a Spark cluster was set up to allow for historical data analysis which will accumulate over time. The goal is to identify metrics that correlate well with market prices.
+
+For example, `dai_filter.py` tracks the number of Dai tokens transferred during a specific time period. Dai is a stablecoin which can be used to obtain margin and leverage positions. Large changes in Dai token transfers indicate bullish or bearish postions in the market. 
