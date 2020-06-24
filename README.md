@@ -37,9 +37,9 @@ Real-time exchange data was is streamed from the IEX Cloud API for market prices
 Data from the Ethereum Node relies on the Ethereum ETL python library, which is installed through Python package index using pip. The data is extracted into three separate parts: (1) blocks, (2) transactions, and (3) token_transfers.
 
 Extraction is exectued by running the following commands on the Ethereum Node EC2:
-'ethereumetl stream --provider-uri file://$HOME/.ethereum/geth.ipc -e block > blocks_file.txt'
-'ethereumetl stream --provider-uri file://$HOME/.ethereum/geth.ipc -e transaction > transactions_file.txt'
-'ethereumetl stream --provider-uri file://$HOME/.ethereum/geth.ipc -e token_transfer > token_transfer_file.txt'
+`ethereumetl stream --provider-uri file://$HOME/.ethereum/geth.ipc -e block > blocks_file.txt`
+`ethereumetl stream --provider-uri file://$HOME/.ethereum/geth.ipc -e transaction > transactions_file.txt`
+`ethereumetl stream --provider-uri file://$HOME/.ethereum/geth.ipc -e token_transfer > token_transfer_file.txt`
 
 ### Producers
 
