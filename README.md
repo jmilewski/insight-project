@@ -4,9 +4,9 @@
 
 The goal of this project is to use Ethereum blockchain data to measure real-time changes in the intrinsic value of network, which can be used to predict Ether prices. The intrinsic value is proxied by computing a Price-to-Metcalfe Ratio (PMR). The relative change in PMR can potentially be used as a leading indicator for cryptocurrency investing and risk management.
 
-#### Metcalfe's Law
-
 #### Price-to-Metcalf Ratio
+
+![Preview](images/pmr.png)
 
 ## Data
 
@@ -21,36 +21,26 @@ Real-time exchange data was is streamed from the IEX Cloud API for market prices
 ![Preview](images/pipeline.png)
 
 
-### Setup
+### Blockchain data extraction
 
+Data from the Ethereum Node is extracted into three separate parts: (1) blocks, (2) transactions, and (3) token transfers.
 
-### Ingestion
+Extraction is exectued by running `filename1.py`, `filename2.py`, and `filename3.py` on the EC2 instance running the Ethereum Node.
 
+### Producers
+
+Four producers are used for each stream of data and executed by running `file.py`, `file.py`, `file.py`, and `file.py`. Each producer reads from the Ethereum Node EC2 and loads JSON data into its own topic.
+
+### Consumers
+
+Consumers pull from each Kafka topic and insert the data into a Postgres database. Kafka consumers are executed by running `file.py`, `file.py`, `file.py`, and `file.py`.
 
 ### Metric
 
-
-### Historical Analytics
-
-
+The Price-to-Metcalfe Ratio is computed by running `file.py`.
 
 ## Frontend
 
+The frontend is a Dash app that continuously pulls data from the Postgres database.
+
 ![Preview](images/frontend.png)
-
-## Repo directory structure
-The top-level directory structure look like the following:
-
-    ├── README.md
-    ├── run.sh
-    ├── app
-         └── app.py
-    ├── src
-        └── dags
-            └── dags.py
-        └── spark
-            └──  spark.py
-        └── database
-                ├── db.py
-                ├── config.py
-        └── main.py
