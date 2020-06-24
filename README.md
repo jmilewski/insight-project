@@ -2,14 +2,6 @@
 
 ### Insight Data Engineering - New York 2020B
 
-## Table of Contents
-1. [Introduction](README.md#Introduction)
-2. [Data](README.md#Data)
-3. [Pipeline](README.md#Pipeline)
-4. [Instructions](README.md#Instructions)
-6. [Frontend](README.md#Frontend)
-
-
 ## Introduction
 
 The goal of this project is to use Ethereum blockchain data to measure real-time changes in the intrinsic value of network, which can be used to predict Ether prices. The intrinsic value is proxied by computing a Price-to-Metcalfe Ratio (PMR). The relative change in PMR can potentially be used as a leading indicator for cryptocurrency investing and risk management.
