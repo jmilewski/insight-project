@@ -2,7 +2,7 @@
 
 ### Insight Data Engineering - New York 2020B
 
-# Table of Contents
+## Table of Contents
 1. [Introduction](README.md#Introduction)
 2. [Data](README.md#Data)
 3. [Pipeline](README.md#Pipeline)
@@ -16,7 +16,7 @@ The goal of this project is to use Ethereum blockchain data to measure real-time
 
 #### Price-to-Metcalf Ratio
 
-<img src="https://github.com/jmilewski/insight-project/blob/master/images/pmr.png" width="150">
+<img src="https://github.com/jmilewski/insight-project/blob/master/images/pmr.png" width="300">
 
 ## Data
 
@@ -36,19 +36,19 @@ Real-time exchange data was is streamed from the IEX Cloud API for market prices
 
 Data from the Ethereum Node is extracted into three separate parts: (1) blocks, (2) transactions, and (3) token transfers.
 
-Extraction is exectued by running `filename1.py`, `filename2.py`, and `filename3.py` on the EC2 instance running the Ethereum Node.
+Extraction is exectued by running `extract_blocks.py`, `extract_transactions.py`, and `extract_token_transfers.py` on the EC2 instance running the Ethereum Node.
 
 ### Producers
 
-Four producers are used for each stream of data and executed by running `file.py`, `file.py`, `file.py`, and `file.py`. Each producer reads from the Ethereum Node EC2 and loads JSON data into its own topic.
+Four producers are used for each stream of data and executed by running `blocks_producer.py`, `transactions_producer.py`, `token_transfers_producer.py`, and `iex_events_producer.py` on the Ethereum Node EC2. Each producer reads from the Ethereum Node EC2 and loads JSON data into its own topic.
 
 ### Consumers
 
-Consumers pull from each Kafka topic and insert the data into a Postgres database. Kafka consumers are executed by running `file.py`, `file.py`, `file.py`, and `file.py`.
+Consumers pull from each Kafka topic and insert data into a Postgres database. Kafka consumers are executed by running `blocks_consumer.py`, `transactions_consumer.py`, `token_transfers_consumer.py`, and `iex_events_consumer.py` on the Postgres EC2 instance.
 
 ### Metric
 
-The Price-to-Metcalfe Ratio is computed by running `file.py`.
+The Price-to-Metcalfe Ratio is computed by running `compute_pmr.py`.
 
 ## Frontend
 
