@@ -16,7 +16,7 @@ The goal of this project is to use Ethereum blockchain data to measure real-time
 
 #### Price-to-Metcalf Ratio
 
-![](images/pmr.png =100x50)
+<img src="https://github.com/jmilewski/images/pmr.png" width="150">
 
 ## Data
 
