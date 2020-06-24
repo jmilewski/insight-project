@@ -55,7 +55,7 @@ Consumers pull from each Kafka topic and insert data into a Postgres database. K
 
 ### Metric
 
-The Price-to-Metcalfe Ratio is computed by running `compute_pmr.py`.
+The Price-to-Metcalfe Ratio is computed by running `compute_pmr.py`. Results are loaded into the Postgres database. 
 
 ## Frontend
 
