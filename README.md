@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The goal of this project is to use Ethereum blockchain data to measure real-time changes in the intrinsic value of network, which can be used to predict Ether prices. The intrinsic value is proxied by computing a Price-to-Metcalfe Ratio (PMR). The relative change in PMR can potentially be used as a leading indicator for cryptocurrency investing and risk management.
+The goal of this project is to use blockchain data to measure real-time changes in the intrinsic value of the Ethereum platform. The intrinsic value is proxied by computing a Price-to-Metcalfe Ratio (PMR). The relative change in PMR can potentially be used as a leading indicator for cryptocurrency investing and risk management.
 
 #### Price-to-Metcalf Ratio
 
